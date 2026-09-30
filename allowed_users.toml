@@ -1,0 +1,7 @@
+[userA]
+capabilities = ["READ", "WRITE", "EXECUTE"]
+pubkey = ""
+[userB]
+capabilities = ["READ"]
+pubkey = ""
+

@@ -1,0 +1,28 @@
+[package]
+name = "ra_tls"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+base64 = "0.22.1"
+bcder = "0.7.4"
+chrono = { version = "0.4.38", features = ["serde"] }
+ciborium = "0.2.2"
+dateparser = "0.2.1"
+dotenvy = "0.15.7"
+jwt = "0.16.0"
+rcgen = "0.13.1"
+reqwest = { version = "0.12.8", features = ["json"] }
+ring = "0.17.8"
+rustls = "0.23.14"
+rustls-pki-types = "1.9.0"
+serde = "1.0.213"
+serde_json = "1.0.132"
+thiserror = "1.0.66"
+time = "0.3.36"
+tokio = { version = "1.41.0", features = ["full"] }
+x509-certificate = "0.23.1"
+x509-parser = "0.16.0"
+
+[features]
+sgx = []

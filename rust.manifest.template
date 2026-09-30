@@ -1,0 +1,43 @@
+# Copyright (C) 2024 Gramine contributors
+# SPDX-License-Identifier: BSD-3-Clause
+
+loader.entrypoint = "file:{{ gramine.libos }}"
+libos.entrypoint = "{{ entrypoint }}"
+
+loader.log_level = "{{ log_level }}"
+
+loader.env.LD_LIBRARY_PATH = "/lib:{{ arch_libdir }}:/usr/lib:/usr/{{ arch_libdir }}:/usr/lib/jvm/java-17-openjdk/lib/"
+
+fs.mounts = [
+  { uri = "file:{{ gramine.runtimedir() }}", path = "/lib" },
+  { uri = "file:{{ arch_libdir }}", path = "{{ arch_libdir }}" },
+  { uri = "file:/usr", path = "/usr" },
+  { uri = "file:{{exec_dir}}", path = "{{exec_dir}}" },
+  { uri = "file:{{java_path}}", path = "{{java_path}}" }
+]
+
+# If using 64G or greater enclave sizes, the JVM flag `-Xmx8G` can be omitted in gramine-sgx.
+sgx.enclave_size = "4G"
+
+# SGX needs minimum 64 threads for loading OpenJDK runtime.
+sgx.max_threads = {{ '1' if env.get('EDMM', '0') == '1' else '64' }}
+
+sgx.edmm_enable = {{ 'true' if env.get('EDMM', '0') == '1' else 'false' }}
+# sgx.edmm_enable = true
+
+# `use_exinfo = true` is needed because OpenJDK queries fault info on page faults
+sgx.use_exinfo = true
+sgx.remote_attestation = "dcap"
+sgx.debug = true
+
+sgx.trusted_files = [
+  "file:{{ gramine.libos }}",
+  "file:{{ entrypoint }}",
+  "file:{{ gramine.runtimedir() }}/",
+  "file:{{ arch_libdir }}/",
+  "file:/usr/{{ arch_libdir }}/",
+  "file:/usr/lib/jvm/java-17-openjdk-amd64/lib/",
+  "file:/usr/lib/jvm/java-17-openjdk-amd64/conf/security/java.security",
+  "file:java-tee.jar",
+  "file:/usr/lib/jvm/java-17-openjdk-amd64/bin/java"
+]

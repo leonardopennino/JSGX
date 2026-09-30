@@ -1,0 +1,31 @@
+mr_enclave = "TSTMRENCLAVE"
+[[users]]
+pubkey = """
+MIIBCgKCAQEA0KqFuS3JeXuALssDjFauEwwyNSi6eOCcojAJzzbVXTCpexwCa\
+QTviJEu+S5hC+8jUqNIU4veTjnQyWQKoPGJm+vPkTip5p8Ocz6UECuuG/nTFd\
+dc9vlFcmbrBdR/qeRbF729a/lsQK8cHfhRFvs9VyCxTtdVxGjo6ze/fElm7RX\
+Z36XSoJF6IhXZtXJU7BWKBeDTnWf6V+GDPTMyXjo7imfZdZn9qcd1b1ArMsAM\
+l+Aysd9JdJnFBLLe1KyH89SydEhleYjYOfGGYkCAW2ALf3E2ZDhqeI9hHLont\
+yxPAnOtEiY2wBfU0WGiKinbZ0Vxjgp/x4LP9bLo2et53F2JCwIDAQAB\
+"""
+capabilities = ["ADD", "READ"]
+[[users]]
+pubkey="""
+MIIBCgKCAQEAsyVV0OgYr6Dm13pW2S/C7uH+GZwiU18AFEWmlArx1csT6rOT+\
+LyiN0d5rlJgLJCXbbUluyjxglJT+oggBrgelal5Rn5XRiveAQ0vFuIBIOFB3t\
+YMU8Nw57WpAqJKFtrFe7uZhai4cVuGG203Mbahj5BfmRq/FYg0s/pOMxISliB\
+XamUHl/uswpVHp0o7lpTuLNJN5lUI32NnYHVJgk6jB8mKZ5er9b1+SHxE9AsX\
+j74RSgELw9ic3g6A39orpCwHQOKnO+auaW8GXOSMdLrepPRKnmgWt+dEVWWdL\
+21mZADzlMe69JB0/KS/e7OUmVloUpNiAIqeOta2nadxsqCfHQIDAQAB\
+"""
+capabilities = ["ADD" , "READ"]
+[[users]]
+pubkey="""
+MIIBCgKCAQEA4uXh6l+P1bWt5+N2Gtixdi8e6Qjbrzp6XbFyUek6KX+yjpucY\
+CEJgq0z97mGK+xorhh2XlnoLkqnSC0TkEu35zj7EGnYFPej9XmcTjUBPmtyp+\
+c8d0nS06aBj+yaI4Wktra8RhB+ThTSktNexdq0JH//Rl1H7pf9uAfmdhigf7B\
+iOSLA+8/8XEM9En1aanYpBRq7YxWCjBzk80CY47Iu+Ljsg3sSw646qqxWq9Zh\
+8l/sTWfYwe8QnOQgHPf1Wa1D0Ngk0g8AanoCT6R75LLTaL2tIgrVavRswx1QU\
+XSmS18EISgus5q1hvQBK1miLRwbKuN19MeEfrkJaO5aVP3TOQIDAQAB\
+"""
+capabilities = ["ADD", "READ"]
